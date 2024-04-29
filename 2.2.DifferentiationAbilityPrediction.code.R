@@ -27,7 +27,8 @@ dev.off()
 
 
 library(SCENT)
-geneInfo=read.table("/Projects/deng/Cerebellum/Development/data/HumanSymbol2ID.txt",check.names=F)
+#download from NCBI, for symbol and gene ID convert
+geneInfo=read.table("/Projects/deng/Public/NCBI/HumanSymbol2ID.txt",check.names=F)
 geneInfo=geneInfo[!duplicated(geneInfo[,3]),]
 rownames(geneInfo)=geneInfo[,3]
 gene=intersect(rownames(EPCExprMat),rownames(geneInfo))
